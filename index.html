@@ -9,21 +9,46 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
+            background-color: #f0f8ff;
+        }
+
+        h1 {
+            color: #2c3e50;
         }
 
         button {
             padding: 10px 20px;
             font-size: 16px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
         }
 
         #fact {
             margin-top: 20px;
             font-size: 18px;
+            color: #34495e;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        img {
+            width: 200px;
+            margin-top: 20px;
+            border-radius: 50%;
         }
     </style>
 </head>
 <body>
     <h1>Earth Fun Fact Generator</h1>
+    <img src="https://example.com/earth-image.jpg" alt="Earth Image">
     <button onclick="generateFact()">Generate Fun Fact</button>
     <div id="fact"></div>
 
@@ -43,7 +68,12 @@
 
         function generateFact() {
             const randomIndex = Math.floor(Math.random() * facts.length);
-            document.getElementById('fact').innerText = facts[randomIndex];
+            const factElement = document.getElementById('fact');
+            factElement.style.opacity = 0; // Reset opacity for animation
+            setTimeout(() => {
+                factElement.innerText = facts[randomIndex];
+                factElement.style.opacity = 1; // Fade-in effect
+            }, 100);
         }
     </script>
 </body>
