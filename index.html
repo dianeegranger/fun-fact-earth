@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Fun Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        #fact {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Earth Fun Fact Generator</h1>
+    <button onclick="generateFact()">Generate Fun Fact</button>
+    <div id="fact"></div>
+
+    <script>
+        const facts = [
+            "Earth is the only planet not named after a god.",
+            "70% of the Earth's surface is covered in water.",
+            "Earth's atmosphere is composed of 78% nitrogen.",
+            "The Earth's rotation is gradually slowing.",
+            "Earth is the densest planet in the Solar System.",
+            "Earth has a powerful magnetic field.",
+            "Earth is the only planet known to support life.",
+            "The Earth's core is as hot as the surface of the sun.",
+            "Earth's atmosphere protects us from meteoroids.",
+            "The Earth orbits the Sun at an average speed of 29.78 km/s."
+        ];
+
+        function generateFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        }
+    </script>
+</body>
+</html>
